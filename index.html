@@ -1,0 +1,726 @@
+<!DOCTYPE html>  <html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <title>AURA LUXE | Haute Botanical Skincare & Beauty</title>    <!-- Google Fonts for High-End Editorial Style -->    <link rel="preconnect" href="https://fonts.googleapis.com">  
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">    <style>  
+    /* =========================================  
+       1. LUXURY DESIGN SYSTEM (CSS VARIABLES)  
+       ========================================= */  
+    :root {  
+      --bg-primary: #0a0b0d;       /* Deep obsidian black */  
+      --bg-secondary: #13151a;     /* Rich dark charcoal */  
+      --bg-card: #181b22;          /* Card background */  
+      --gold-main: #dfba73;        /* Champagne gold */  
+      --gold-hover: #f3d496;       /* Radiant highlight gold */  
+      --text-main: #f5f6f8;        /* Soft ivory text */  
+      --text-muted: #9aa1ad;       /* Subdued silver text */  
+      --border: rgba(223, 186, 115, 0.2);  
+      --font-heading: 'Playfair Display', serif;  
+      --font-body: 'Montserrat', sans-serif;  
+      --transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);  
+    }  
+  
+    * {  
+      box-sizing: border-box;  
+      margin: 0;  
+      padding: 0;  
+      scroll-behavior: smooth;  
+    }  
+  
+    body {  
+      background-color: var(--bg-primary);  
+      color: var(--text-main);  
+      font-family: var(--font-body);  
+      line-height: 1.6;  
+      overflow-x: hidden;  
+    }  
+  
+    a {  
+      text-decoration: none;  
+      color: inherit;  
+    }  
+  
+    img {  
+      max-width: 100%;  
+      display: block;  
+    }  
+  
+    /* Container */  
+    .container {  
+      width: 90%;  
+      max-width: 1240px;  
+      margin: 0 auto;  
+    }  
+  
+    /* =========================================  
+       2. NAVIGATION  
+       ========================================= */  
+    header {  
+      position: sticky;  
+      top: 0;  
+      background: rgba(10, 11, 13, 0.88);  
+      backdrop-filter: blur(12px);  
+      border-bottom: 1px solid var(--border);  
+      z-index: 1000;  
+    }  
+  
+    .nav-wrapper {  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+      padding: 1.25rem 0;  
+    }  
+  
+    .brand-logo {  
+      font-family: var(--font-heading);  
+      font-size: 1.8rem;  
+      letter-spacing: 0.2em;  
+      color: var(--gold-main);  
+      font-weight: 700;  
+      text-transform: uppercase;  
+    }  
+  
+    .nav-links {  
+      display: flex;  
+      gap: 2rem;  
+      list-style: none;  
+    }  
+  
+    .nav-links a {  
+      font-size: 0.85rem;  
+      letter-spacing: 0.15em;  
+      text-transform: uppercase;  
+      color: var(--text-muted);  
+      transition: var(--transition);  
+    }  
+  
+    .nav-links a:hover {  
+      color: var(--gold-main);  
+    }  
+  
+    /* =========================================  
+       3. HERO SECTION  
+       ========================================= */  
+    .hero {  
+      min-height: 85vh;  
+      display: flex;  
+      align-items: center;  
+      position: relative;  
+      background: linear-gradient(180deg, rgba(10,11,13,0.3) 0%, var(--bg-primary) 100%),  
+                  url('https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;  
+    }  
+  
+    .hero-content {  
+      max-width: 650px;  
+      padding: 4rem 0;  
+    }  
+  
+    .hero-tag {  
+      font-size: 0.8rem;  
+      letter-spacing: 0.3em;  
+      color: var(--gold-main);  
+      text-transform: uppercase;  
+      margin-bottom: 1rem;  
+      display: block;  
+    }  
+  
+    .hero h1 {  
+      font-family: var(--font-heading);  
+      font-size: clamp(2.5rem, 5vw, 4.2rem);  
+      line-height: 1.15;  
+      margin-bottom: 1.5rem;  
+      color: #fff;  
+    }  
+  
+    .hero p {  
+      color: var(--text-muted);  
+      font-size: 1.05rem;  
+      margin-bottom: 2rem;  
+      font-weight: 300;  
+    }  
+  
+    .btn {  
+      display: inline-block;  
+      padding: 0.9rem 2.2rem;  
+      font-size: 0.8rem;  
+      font-weight: 600;  
+      letter-spacing: 0.2em;  
+      text-transform: uppercase;  
+      border-radius: 50px;  
+      cursor: pointer;  
+      transition: var(--transition);  
+    }  
+  
+    .btn-gold {  
+      background: var(--gold-main);  
+      color: #0b0c0e;  
+      border: 1px solid var(--gold-main);  
+    }  
+  
+    .btn-gold:hover {  
+      background: var(--gold-hover);  
+      transform: translateY(-2px);  
+      box-shadow: 0 10px 25px rgba(223, 186, 115, 0.3);  
+    }  
+  
+    /* =========================================  
+       4. BEST SELLER SPOTLIGHT  
+       ========================================= */  
+    .section-title {  
+      text-align: center;  
+      margin-bottom: 3.5rem;  
+    }  
+  
+    .section-title h2 {  
+      font-family: var(--font-heading);  
+      font-size: 2.4rem;  
+      margin-bottom: 0.5rem;  
+    }  
+  
+    .section-title span {  
+      font-size: 0.8rem;  
+      letter-spacing: 0.25em;  
+      color: var(--gold-main);  
+      text-transform: uppercase;  
+    }  
+  
+    .bestseller-banner {  
+      background: var(--bg-secondary);  
+      border: 1px solid var(--border);  
+      border-radius: 16px;  
+      overflow: hidden;  
+      margin: 4rem 0 6rem 0;  
+      display: grid;  
+      grid-template-columns: 1.1fr 1fr;  
+      align-items: center;  
+    }  
+  
+    .bestseller-image {  
+      height: 100%;  
+      min-height: 400px;  
+      position: relative;  
+    }  
+  
+    .bestseller-image img {  
+      width: 100%;  
+      height: 100%;  
+      object-fit: cover;  
+    }  
+  
+    .bestseller-details {  
+      padding: 3.5rem;  
+    }  
+  
+    .badge {  
+      display: inline-block;  
+      background: rgba(223, 186, 115, 0.15);  
+      border: 1px solid var(--gold-main);  
+      color: var(--gold-main);  
+      padding: 0.3rem 0.8rem;  
+      font-size: 0.7rem;  
+      border-radius: 30px;  
+      text-transform: uppercase;  
+      letter-spacing: 0.1em;  
+      margin-bottom: 1rem;  
+    }  
+  
+    .rating-stars {  
+      color: var(--gold-main);  
+      font-size: 0.95rem;  
+      margin: 0.5rem 0 1.2rem 0;  
+    }  
+  
+    .price {  
+      font-size: 1.6rem;  
+      color: var(--gold-main);  
+      font-weight: 500;  
+      margin-bottom: 1.5rem;  
+    }  
+  
+    /* =========================================  
+       5. ALL PRODUCTS GRID & FILTERS  
+       ========================================= */  
+    .catalog-section {  
+      padding: 2rem 0 6rem 0;  
+    }  
+  
+    .filter-bar {  
+      display: flex;  
+      justify-content: center;  
+      gap: 1rem;  
+      margin-bottom: 3rem;  
+      flex-wrap: wrap;  
+    }  
+  
+    .filter-btn {  
+      background: transparent;  
+      border: 1px solid var(--border);  
+      color: var(--text-muted);  
+      padding: 0.5rem 1.4rem;  
+      border-radius: 30px;  
+      font-size: 0.8rem;  
+      text-transform: uppercase;  
+      letter-spacing: 0.1em;  
+      cursor: pointer;  
+      transition: var(--transition);  
+    }  
+  
+    .filter-btn.active, .filter-btn:hover {  
+      border-color: var(--gold-main);  
+      color: var(--gold-main);  
+      background: rgba(223, 186, 115, 0.08);  
+    }  
+  
+    .products-grid {  
+      display: grid;  
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));  
+      gap: 2rem;  
+    }  
+  
+    .product-card {  
+      background: var(--bg-card);  
+      border: 1px solid rgba(255, 255, 255, 0.04);  
+      border-radius: 12px;  
+      overflow: hidden;  
+      display: flex;  
+      flex-direction: column;  
+      transition: var(--transition);  
+      position: relative;  
+    }  
+  
+    .product-card:hover {  
+      transform: translateY(-6px);  
+      border-color: var(--border);  
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);  
+    }  
+  
+    .card-img-wrap {  
+      width: 100%;  
+      height: 300px;  
+      position: relative;  
+      overflow: hidden;  
+    }  
+  
+    .card-img-wrap img {  
+      width: 100%;  
+      height: 100%;  
+      object-fit: cover;  
+      transition: var(--transition);  
+    }  
+  
+    .product-card:hover .card-img-wrap img {  
+      transform: scale(1.05);  
+    }  
+  
+    .card-info {  
+      padding: 1.5rem;  
+      display: flex;  
+      flex-direction: column;  
+      flex-grow: 1;  
+    }  
+  
+    .card-info h3 {  
+      font-family: var(--font-heading);  
+      font-size: 1.25rem;  
+      margin-bottom: 0.4rem;  
+    }  
+  
+    .card-info p {  
+      font-size: 0.85rem;  
+      color: var(--text-muted);  
+      margin-bottom: 1rem;  
+      flex-grow: 1;  
+    }  
+  
+    .card-footer {  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+      padding-top: 1rem;  
+      border-top: 1px solid rgba(255, 255, 255, 0.05);  
+    }  
+  
+    /* =========================================  
+       6. REVIEWS SECTION  
+       ========================================= */  
+    .reviews-section {  
+      background: var(--bg-secondary);  
+      padding: 5rem 0;  
+      border-top: 1px solid var(--border);  
+      border-bottom: 1px solid var(--border);  
+    }  
+  
+    .reviews-grid {  
+      display: grid;  
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));  
+      gap: 2rem;  
+    }  
+  
+    .review-card {  
+      background: var(--bg-card);  
+      border: 1px solid rgba(255, 255, 255, 0.05);  
+      border-radius: 12px;  
+      padding: 2rem;  
+    }  
+  
+    .review-card p {  
+      font-style: italic;  
+      color: var(--text-muted);  
+      margin-bottom: 1.5rem;  
+      font-size: 0.95rem;  
+    }  
+  
+    .reviewer {  
+      display: flex;  
+      align-items: center;  
+      gap: 0.8rem;  
+    }  
+  
+    .reviewer-avatar {  
+      width: 42px;  
+      height: 42px;  
+      border-radius: 50%;  
+      background: var(--gold-main);  
+      color: #0b0c0e;  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      font-weight: 700;  
+      font-size: 0.9rem;  
+    }  
+  
+    .reviewer-meta h4 {  
+      font-size: 0.9rem;  
+    }  
+  
+    .reviewer-meta span {  
+      font-size: 0.75rem;  
+      color: var(--gold-main);  
+    }  
+  
+    /* =========================================  
+       7. FLOATING LIVE CHAT & MESSENGERS  
+       ========================================= */  
+    .floating-chat-container {  
+      position: fixed;  
+      bottom: 2rem;  
+      right: 2rem;  
+      z-index: 9999;  
+    }  
+  
+    .chat-bubble-toggle {  
+      width: 60px;  
+      height: 60px;  
+      border-radius: 50%;  
+      background: var(--gold-main);  
+      color: #0b0c0e;  
+      display: flex;  
+      align-items: center;  
+      justify-content: center;  
+      box-shadow: 0 10px 25px rgba(223, 186, 115, 0.4);  
+      cursor: pointer;  
+      transition: var(--transition);  
+      border: none;  
+    }  
+  
+    .chat-bubble-toggle:hover {  
+      transform: scale(1.08);  
+      background: var(--gold-hover);  
+    }  
+  
+    .chat-dropdown {  
+      position: absolute;  
+      bottom: 75px;  
+      right: 0;  
+      width: 320px;  
+      background: var(--bg-card);  
+      border: 1px solid var(--border);  
+      border-radius: 16px;  
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);  
+      padding: 1.5rem;  
+      display: none;  
+      flex-direction: column;  
+      gap: 1rem;  
+      animation: popIn 0.25s ease-out forwards;  
+    }  
+  
+    .chat-dropdown.active {  
+      display: flex;  
+    }  
+  
+    @keyframes popIn {  
+      from { opacity: 0; transform: translateY(15px); }  
+      to { opacity: 1; transform: translateY(0); }  
+    }  
+  
+    .chat-header {  
+      border-bottom: 1px solid rgba(255,255,255,0.06);  
+      padding-bottom: 0.8rem;  
+    }  
+  
+    .chat-header h4 {  
+      font-family: var(--font-heading);  
+      font-size: 1.1rem;  
+    }  
+  
+    .chat-header p {  
+      font-size: 0.75rem;  
+      color: var(--text-muted);  
+    }  
+  
+    .messenger-btn {  
+      display: flex;  
+      align-items: center;  
+      gap: 1rem;  
+      padding: 0.85rem 1rem;  
+      border-radius: 10px;  
+      color: #fff;  
+      font-size: 0.85rem;  
+      font-weight: 500;  
+      transition: var(--transition);  
+    }  
+  
+    /* WhatsApp button styling */  
+    .btn-wa {  
+      background: #25D366;  
+      color: #fff;  
+    }  
+    .btn-wa:hover {  
+      background: #1ebc59;  
+    }  
+  
+    /* Messenger button styling */  
+    .btn-msgr {  
+      background: #0084FF;  
+      color: #fff;  
+    }  
+    .btn-msgr:hover {  
+      background: #0073de;  
+    }  
+  
+    /* Custom form toggle button */  
+    .btn-chat-custom {  
+      background: var(--bg-secondary);  
+      border: 1px solid var(--border);  
+      color: var(--gold-main);  
+    }  
+    .btn-chat-custom:hover {  
+      background: rgba(223, 186, 115, 0.1);  
+    }  
+  
+    /* =========================================  
+       8. RESPONSIVE DESIGN  
+       ========================================= */  
+    @media (max-width: 900px) {  
+      .bestseller-banner {  
+        grid-template-columns: 1fr;  
+      }  
+      .bestseller-details {  
+        padding: 2rem;  
+      }  
+      .nav-links {  
+        display: none; /* Can be expanded into a mobile drawer if desired */  
+      }  
+    }  
+  </style>  </head>  
+<body>    <!-- ================= HEADER ================= -->    <header>  
+    <div class="container nav-wrapper">  
+      <a href="#" class="brand-logo">AURA LUXE</a>  
+      <ul class="nav-links">  
+        <li><a href="#bestseller">Best Seller</a></li>  
+        <li><a href="#products">Collection</a></li>  
+        <li><a href="#reviews">Reviews</a></li>  
+      </ul>  
+      <button class="btn btn-gold" onclick="toggleChatDropdown()" style="padding: 0.6rem 1.4rem;">Chat With Us</button>  
+    </div>  
+  </header>    <!-- ================= HERO ================= -->    <section class="hero">  
+    <div class="container hero-content">  
+      <span class="hero-tag">Radiance Redefined</span>  
+      <h1>Clean Botanicals, Supreme Elegance.</h1>  
+      <p>Discover hand-crafted, rare botanical formulas engineered to elevate skin tone, deep hydration, and pure natural luster.</p>  
+      <a href="#products" class="btn btn-gold">Explore The Collection</a>  
+    </div>  
+  </section>    <!-- ================= BEST SELLER SPOTLIGHT ================= -->    <div class="container" id="bestseller">  
+    <div class="bestseller-banner">  
+      <div class="bestseller-image">  
+        <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=1000&q=80" alt="24K Liquid Gold Renewal Elixir">  
+      </div>  
+      <div class="bestseller-details">  
+        <span class="badge">#1 Best Selling Product</span>  
+        <h2 style="font-family: var(--font-heading); font-size: 2.2rem; margin-top: 0.4rem;">24K Liquid Gold Renewal Elixir</h2>  
+        <div class="rating-stars">★★★★★ <span style="color: var(--text-muted); font-size: 0.8rem;">(4.9 / 5.0 from 340+ reviews)</span></div>  
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1.5rem;">  
+          Our signature restorative facial serum infused with pure gold flakes, Moroccan cold-pressed prickly pear seed oil, and plant ceramides.  
+        </p>  
+        <div class="price">$148.00</div>  
+        <button class="btn btn-gold" onclick="openOrderModal('24K Liquid Gold Renewal Elixir')">Inquire / Purchase</button>  
+      </div>  
+    </div>  
+  </div>    <!-- ================= CATALOGUE ================= -->    <section class="catalog-section" id="products">  
+    <div class="container">  
+      <div class="section-title">  
+        <span>Curated Skincare</span>  
+        <h2>Our Core Products</h2>  
+      </div>  <!-- Live Category Filter Buttons -->  
+  <div class="filter-bar">  
+    <button class="filter-btn active" onclick="filterItems('all', this)">All Formulas</button>  
+    <button class="filter-btn" onclick="filterItems('serum', this)">Serums</button>  
+    <button class="filter-btn" onclick="filterItems('creams', this)">Crèmes</button>  
+    <button class="filter-btn" onclick="filterItems('oils', this)">Oils & Masks</button>  
+  </div>  
+
+  <div class="products-grid" id="productGrid">  
+    <!-- Product 1 -->  
+    <div class="product-card" data-category="serum">  
+      <div class="card-img-wrap">  
+        <img src="https://images.unsplash.com/photo-1608248597359-53e9a7e6bdfd?auto=format&fit=crop&w=800&q=80" alt="Midnight Velvet Night Serum">  
+      </div>  
+      <div class="card-info">  
+        <div class="rating-stars">★★★★★ <span style="font-size: 0.75rem; color: var(--text-muted);">(4.8)</span></div>  
+        <h3>Midnight Velvet Serum</h3>  
+        <p>Retinol alternative infused with blue tansy and niacinamide for overnight skin balance.</p>  
+        <div class="card-footer">  
+          <span class="price" style="font-size: 1.25rem; margin-bottom:0;">$95.00</span>  
+          <button class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;" onclick="openOrderModal('Midnight Velvet Serum')">Order</button>  
+        </div>  
+      </div>  
+    </div>  
+
+    <!-- Product 2 -->  
+    <div class="product-card" data-category="creams">  
+      <div class="card-img-wrap">  
+        <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=800&q=80" alt="Rose Quartz Peptide Cream">  
+      </div>  
+      <div class="card-info">  
+        <div class="rating-stars">★★★★★ <span style="font-size: 0.75rem; color: var(--text-muted);">(5.0)</span></div>  
+        <h3>Rose Quartz Peptide Crème</h3>  
+        <p>Weightless whipped moisturizer packed with micro-peptides for firming and glass-skin radiance.</p>  
+        <div class="card-footer">  
+          <span class="price" style="font-size: 1.25rem; margin-bottom:0;">$110.00</span>  
+          <button class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;" onclick="openOrderModal('Rose Quartz Peptide Crème')">Order</button>  
+        </div>  
+      </div>  
+    </div>  
+
+    <!-- Product 3 -->  
+    <div class="product-card" data-category="oils">  
+      <div class="card-img-wrap">  
+        <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=800&q=80" alt="Golden Glow Face Oil">  
+      </div>  
+      <div class="card-info">  
+        <div class="rating-stars">★★★★☆ <span style="font-size: 0.75rem; color: var(--text-muted);">(4.7)</span></div>  
+        <h3>Solar Radiance Face Oil</h3>  
+        <p>Pure cold-pressed squalane and rosehip oil to seal in hydration with zero greasy residue.</p>  
+        <div class="card-footer">  
+          <span class="price" style="font-size: 1.25rem; margin-bottom:0;">$78.00</span>  
+          <button class="btn btn-gold" style="padding: 0.5rem 1.2rem; font-size: 0.75rem;" onclick="openOrderModal('Solar Radiance Face Oil')">Order</button>  
+        </div>  
+      </div>  
+    </div>  
+  </div>  
+</div>
+
+  </section>    <!-- ================= REVIEWS SECTION ================= -->    <section class="reviews-section" id="reviews">  
+    <div class="container">  
+      <div class="section-title">  
+        <span>Testimonials</span>  
+        <h2>Loved By Skin Purists</h2>  
+      </div>  
+      <div class="reviews-grid">  
+        <div class="review-card">  
+          <div class="rating-stars">★★★★★</div>  
+          <p>“The 24K Liquid Gold Renewal transformed my winter dullness within two weeks. Nothing else comes close to this finish.”</p>  
+          <div class="reviewer">  
+            <div class="reviewer-avatar">EM</div>  
+            <div class="reviewer-meta">  
+              <h4>Elena Mitchell</h4>  
+              <span>Verified Buyer</span>  
+            </div>  
+          </div>  
+        </div>  
+        <div class="review-card">  
+          <div class="rating-stars">★★★★★</div>  
+          <p>“Texture, fragrance, and results are truly five-star level. The Messenger concierge helped me choose the exact routine for my skin type.”</p>  
+          <div class="reviewer">  
+            <div class="reviewer-avatar">SL</div>  
+            <div class="reviewer-meta">  
+              <h4>Sarah Laurent</h4>  
+              <span>Verified Buyer</span>  
+            </div>  
+          </div>  
+        </div>  
+      </div>  
+    </div>  
+  </section>    <!-- ================= FLOATING CHAT / MESSENGERS ================= -->    <div class="floating-chat-container">  
+    <!-- Chat Popup -->  
+    <div class="chat-dropdown" id="chatDropdown">  
+      <div class="chat-header">  
+        <h4>Need Concierge Help?</h4>  
+        <p>Chat directly with our skincare beauty team.</p>  
+      </div>  <!-- Replace 1234567890 with your full WhatsApp phone number (including country code) -->  
+  <a href="https://wa.me/1234567890?text=Hello%20Aura%20Luxe,%20I%20would%20like%20more%20details%20about%20your%20products!"   
+     target="_blank" class="messenger-btn btn-wa">  
+    <span>💬</span> Chat on WhatsApp  
+  </a>  
+
+  <!-- Replace 'your-facebook-page-id-or-username' with your actual FB page handle -->  
+  <a href="https://m.me/your-facebook-page-id-or-username"   
+     target="_blank" class="messenger-btn btn-msgr">  
+    <span>⚡</span> Facebook Messenger  
+  </a>  
+
+  <button class="messenger-btn btn-chat-custom" onclick="openContactForm()">  
+    <span>✉️</span> Leave an Email Message  
+  </button>  
+</div>  
+
+<!-- Toggle Button with Chat Icon -->  
+<button class="chat-bubble-toggle" onclick="toggleChatDropdown()" aria-label="Open Chat">  
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  
+    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>  
+  </svg>  
+</button>
+
+  </div>    <!-- ================= SCRIPTS ================= -->    <script>  
+    // 1. Chat Dropdown Toggle  
+    function toggleChatDropdown() {  
+      const dropdown = document.getElementById('chatDropdown');  
+      dropdown.classList.toggle('active');  
+    }  
+  
+    // 2. Filter Products by Category  
+    function filterItems(category, btnElement) {  
+      // Toggle active style on buttons  
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));  
+      btnElement.classList.add('active');  
+  
+      // Filter product cards  
+      const cards = document.querySelectorAll('.product-card');  
+      cards.forEach(card => {  
+        if (category === 'all' || card.getAttribute('data-category') === category) {  
+          card.style.display = 'flex';  
+        } else {  
+          card.style.display = 'none';  
+        }  
+      });  
+    }  
+  
+    // 3. Purchase / Inquiry Handler (Redirects to WhatsApp with pre-filled message)  
+    function openOrderModal(productName) {  
+      const waNumber = "1234567890"; // <-- ENTER YOUR WHATSAPP NUMBER HERE  
+      const message = encodeURIComponent(`Hi, I'm interested in ordering the "${productName}". Can you please provide delivery details?`);  
+      window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');  
+    }  
+  
+    // 4. Fallback Email / Custom Form Prompt  
+    function openContactForm() {  
+      const email = prompt("Enter your email address so our team can follow up:");  
+      if (email) {  
+        alert("Thank you! Our skincare specialist will email you shortly.");  
+        toggleChatDropdown();  
+      }  
+    }  
+  </script>  </body>  
+</html>
